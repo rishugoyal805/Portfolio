@@ -5,28 +5,10 @@ import Link from "next/link"
 export default function About() {
   const timeline = [
     {
-      year: "2023 - Present",
-      title: "Senior Full Stack Developer",
-      company: "Tech Innovations Inc.",
-      description: "Leading development of enterprise applications using React, Node.js, and AWS.",
-    },
-    {
-      year: "2020 - 2023",
-      title: "Full Stack Developer",
-      company: "Digital Solutions Ltd.",
-      description: "Developed and maintained web applications for clients across various industries.",
-    },
-    {
-      year: "2018 - 2020",
-      title: "Frontend Developer",
-      company: "WebCraft Studios",
-      description: "Created responsive and interactive user interfaces using modern JavaScript frameworks.",
-    },
-    {
-      year: "2016 - 2018",
-      title: "Computer Science Degree",
-      company: "University of Technology",
-      description: "Bachelor's degree in Computer Science with focus on software engineering.",
+      year: "2024(June-July)",
+      title: "Intern",
+      company: "DRID",
+      description: "Developed a word puzzle game designed for specially abled people, enhancing accessibility and user engagement.",
     },
   ]
 
@@ -50,37 +32,33 @@ export default function About() {
             <div className="relative overflow-hidden rounded-lg shadow-lg">
               <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md transform group-hover:scale-105 transition-transform duration-500"></div>
               <img
-                src="/placeholder.svg?height=400&width=500"
+                src="/rishu.jpg?height=400&width=500"
                 alt="About Rishu Goyal"
                 className="relative rounded-lg shadow-lg w-full transform group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold mb-4">I&apos;m Rishu Goyal, a Full Stack Developer</h3>
+            <h3 className="text-2xl font-semibold mb-4">I&apos;m Rishu Goyal, a Web Developer and Software Engineer</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              With over 5 years of experience in web development, I specialize in building modern, responsive, and
-              user-friendly applications. My journey in tech began when I was in college, and since then, I&apos;ve been
-              passionate about creating digital solutions that solve real-world problems.
+            I specialize in building modern, scalable web applications and integrating AI models into real-world solutions. My work involves developing with Ollama, Hugging Face, and APIs, creating efficient and user-friendly experiences.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              I have expertise in JavaScript, React, Node.js, and various other technologies in the web development
-              ecosystem. I believe in continuous learning and staying updated with the latest trends and best practices
-              in the industry.
+            With a strong foundation in full-stack development, I enjoy solving complex problems and exploring the latest advancements in AI and web technologies. I'm passionate about continuous learning and crafting solutions that make a meaningful impact.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
                 <h4 className="font-semibold mb-1">Name:</h4>
-                <p className="text-gray-600 dark:text-gray-400">Rishu Goyal</p>
+                <p className="text-gray-600 dark:text-gray-400">Rishu</p>
               </div>
               <div className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
                 <h4 className="font-semibold mb-1">Email:</h4>
-                <p className="text-gray-600 dark:text-gray-400 truncate">rishu.goyal@example.com</p>
+                <p className="text-gray-600 dark:text-gray-400 truncate">rishugoyal16800@gmail.com</p>
               </div>
               <div className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
                 <h4 className="font-semibold mb-1">Location:</h4>
-                <p className="text-gray-600 dark:text-gray-400">Bangalore, India</p>
+                <p className="text-gray-600 dark:text-gray-400">Noida, Uttar Pradesh, India</p>
               </div>
               <div className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
                 <h4 className="font-semibold mb-1">Availability:</h4>
@@ -89,7 +67,7 @@ export default function About() {
             </div>
 
             <Button asChild className="rounded-full shadow-md hover:shadow-lg transition-all">
-              <Link href="/resume.pdf" target="_blank">
+              <Link href="/RishuResume.pdf" target="_blank">
                 <FileText className="mr-2 h-4 w-4" /> Download Resume
               </Link>
             </Button>
