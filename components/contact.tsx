@@ -48,20 +48,20 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      details: "rishu.goyal@example.com",
-      link: "mailto:rishu.goyal@example.com",
+      details: "rishugoyal16800@gmail.com",
+      link: "mailto:rishugoyal16800@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      details: "+91 9876543210",
-      link: "tel:+919876543210",
+      details: "+91 8059870163",
+      link: "tel:+918059870163",
     },
     {
       icon: MapPin,
       title: "Location",
-      details: "Bangalore, India",
-      link: "https://maps.google.com/?q=Bangalore,India",
+      details: "Noida, Uttar Pradesh, India",
+      link: "https://maps.google.com/?q=Noida,UttarPradesh,India",
     },
   ]
 
@@ -108,65 +108,91 @@ export default function Contact() {
               <CardContent className="p-4 sm:p-6">
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-1">
-                        Your Name
-                      </label>
+                    {/* Name Input */}
+                    <div className="relative">
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="John Doe"
+                        placeholder=""
                         required
                         disabled={isSubmitting}
+                        className="peer h-12 w-full border rounded-md px-3 pt-5 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-1">
-                        Your Email
+                      <label
+                        htmlFor="name"
+                        className="absolute left-3 top-4 text-gray-500 text-sm transition-all 
+      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base 
+      peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-500"
+                      >
+                        Enter your full name
                       </label>
+                    </div>
+
+                    {/* Email Input */}
+                    <div className="relative">
                       <Input
                         id="email"
                         name="email"
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="john@example.com"
+                        placeholder=""
                         required
                         disabled={isSubmitting}
+                        className="peer h-12 w-full border rounded-md px-3 pt-5 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
+                      <label
+                        htmlFor="email"
+                        className="absolute left-3 top-4 text-gray-500 text-sm transition-all 
+      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base 
+      peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-500"
+                      >
+                        Enter your email address
+                      </label>
                     </div>
                   </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium mb-1">
-                      Subject
-                    </label>
+
+                  <div className="relative">
                     <Input
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="How can I help you?"
+                      placeholder=" "
                       required
                       disabled={isSubmitting}
+                      className="peer h-10 w-full border rounded-md px-2 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-1">
-                      Message
+                    <label
+                      htmlFor="subject"
+                      className="absolute left-2 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500"
+                    >
+                      What's your message about?
                     </label>
+                  </div>
+
+                  <div className="relative">
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Your message here..."
+                      placeholder=" "
                       rows={5}
                       required
                       disabled={isSubmitting}
+                      className="peer w-full border rounded-md px-2 py-1 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
+                    <label
+                      htmlFor="message"
+                      className="absolute left-2 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500"
+                    >
+                      Type your message here...
+                    </label>
                   </div>
+
                   <Button type="submit" className="w-full" disabled={isSubmitting}>
                     {isSubmitting ? (
                       <>
