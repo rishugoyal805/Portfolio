@@ -77,7 +77,7 @@ export default function Hero() {
                 className="rounded-full shadow-sm hover:shadow-md transition-all"
                 asChild
               >
-                <Link href="/resume.pdf" target="_blank">
+                <Link href="/RishuResume.pdf" target="_blank">
                   <Download className="mr-2 h-4 w-4" /> Resume
                 </Link>
               </Button>
@@ -88,7 +88,7 @@ export default function Hero() {
                   className="rounded-full shadow-sm hover:shadow-md transition-all hover:scale-110"
                   asChild
                 >
-                  <Link href="https://github.com/rishugoyal" target="_blank" aria-label="GitHub">
+                  <Link href="https://github.com/rishugoyal805" target="_blank" aria-label="GitHub">
                     <Github className="h-5 w-5" />
                   </Link>
                 </Button>
@@ -98,7 +98,7 @@ export default function Hero() {
                   className="rounded-full shadow-sm hover:shadow-md transition-all hover:scale-110"
                   asChild
                 >
-                  <Link href="https://linkedin.com/in/rishugoyal" target="_blank" aria-label="LinkedIn">
+                  <Link href="https://linkedin.com/in/rishu0405" target="_blank" aria-label="LinkedIn">
                     <Linkedin className="h-5 w-5" />
                   </Link>
                 </Button>
@@ -108,7 +108,7 @@ export default function Hero() {
                   className="rounded-full shadow-sm hover:shadow-md transition-all hover:scale-110"
                   asChild
                 >
-                  <Link href="mailto:rishu.goyal@example.com" aria-label="Email">
+                  <Link href="mailto:rishugoyal16800@gmail.com" aria-label="Email">
                     <Mail className="h-5 w-5" />
                   </Link>
                 </Button>
@@ -124,7 +124,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl transform -translate-x-4 translate-y-4"></div>
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <img
-                  src="/placeholder.svg?height=320&width=320"
+                  src="/rishu.jpg?height=320&width=320"
                   alt="Rishu Goyal"
                   className="w-full h-full object-cover"
                 />
