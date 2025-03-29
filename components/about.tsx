@@ -1,0 +1,136 @@
+import { Button } from "@/components/ui/button"
+import { FileText } from "lucide-react"
+import Link from "next/link"
+
+export default function About() {
+  const timeline = [
+    {
+      year: "2023 - Present",
+      title: "Senior Full Stack Developer",
+      company: "Tech Innovations Inc.",
+      description: "Leading development of enterprise applications using React, Node.js, and AWS.",
+    },
+    {
+      year: "2020 - 2023",
+      title: "Full Stack Developer",
+      company: "Digital Solutions Ltd.",
+      description: "Developed and maintained web applications for clients across various industries.",
+    },
+    {
+      year: "2018 - 2020",
+      title: "Frontend Developer",
+      company: "WebCraft Studios",
+      description: "Created responsive and interactive user interfaces using modern JavaScript frameworks.",
+    },
+    {
+      year: "2016 - 2018",
+      title: "Computer Science Degree",
+      company: "University of Technology",
+      description: "Bachelor's degree in Computer Science with focus on software engineering.",
+    },
+  ]
+
+  return (
+    <section id="about" className="section-padding relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-white dark:bg-gray-800">
+        <div className="absolute inset-0 opacity-30 dark:opacity-10">
+          <div className="absolute top-0 right-0 w-full h-full bg-grid-pattern"></div>
+        </div>
+      </div>
+
+      <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          <div className="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="group">
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
+              <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md transform group-hover:scale-105 transition-transform duration-500"></div>
+              <img
+                src="/placeholder.svg?height=400&width=500"
+                alt="About Rishu Goyal"
+                className="relative rounded-lg shadow-lg w-full transform group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">I&apos;m Rishu Goyal, a Full Stack Developer</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              With over 5 years of experience in web development, I specialize in building modern, responsive, and
+              user-friendly applications. My journey in tech began when I was in college, and since then, I&apos;ve been
+              passionate about creating digital solutions that solve real-world problems.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+              I have expertise in JavaScript, React, Node.js, and various other technologies in the web development
+              ecosystem. I believe in continuous learning and staying updated with the latest trends and best practices
+              in the industry.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
+                <h4 className="font-semibold mb-1">Name:</h4>
+                <p className="text-gray-600 dark:text-gray-400">Rishu Goyal</p>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
+                <h4 className="font-semibold mb-1">Email:</h4>
+                <p className="text-gray-600 dark:text-gray-400 truncate">rishu.goyal@example.com</p>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
+                <h4 className="font-semibold mb-1">Location:</h4>
+                <p className="text-gray-600 dark:text-gray-400">Bangalore, India</p>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
+                <h4 className="font-semibold mb-1">Availability:</h4>
+                <p className="text-gray-600 dark:text-gray-400">Open to opportunities</p>
+              </div>
+            </div>
+
+            <Button asChild className="rounded-full shadow-md hover:shadow-lg transition-all">
+              <Link href="/resume.pdf" target="_blank">
+                <FileText className="mr-2 h-4 w-4" /> Download Resume
+              </Link>
+            </Button>
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-semibold mb-8 text-center">My Journey</h3>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/30 transform md:translate-x-px"></div>
+
+            {/* Timeline items */}
+            <div className="space-y-12">
+              {timeline.map((item, index) => (
+                <div
+                  key={index}
+                  className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
+                >
+                  {/* Dot */}
+                  <div className="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-primary border-4 border-white dark:border-gray-800 transform -translate-x-1/2 md:-translate-x-2.5"></div>
+
+                  {/* Content */}
+                  <div className="ml-8 md:ml-0 md:w-1/2 md:px-8">
+                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                      <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm mb-2">
+                        {item.year}
+                      </span>
+                      <h4 className="text-lg font-semibold">{item.title}</h4>
+                      <p className="text-gray-600 dark:text-gray-300 font-medium">{item.company}</p>
+                      <p className="text-gray-500 dark:text-gray-400 mt-1">{item.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
