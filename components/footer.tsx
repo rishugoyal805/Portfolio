@@ -18,32 +18,32 @@ export default function Footer() {
               Rishu<span className="text-primary">Goyal</span>
             </Link>
             <p className="text-gray-400 max-w-md mb-6">
-              Building digital experiences that make a difference. Let's work together to bring your ideas to life.
+            "Building digital experiences that make a real impact. Let's collaborate and bring your ideas to life.
             </p>
             <div className="flex space-x-4">
               <Link
-                href="https://github.com/rishugoyal"
+                href="https://github.com/rishugoyal805"
                 target="_blank"
                 className="hover:text-primary transition-colors p-2 bg-gray-800 rounded-full"
               >
                 <Github className="h-5 w-5" />
               </Link>
               <Link
-                href="https://linkedin.com/in/rishugoyal"
+                href="https://linkedin.com/in/rishu0405"
                 target="_blank"
                 className="hover:text-primary transition-colors p-2 bg-gray-800 rounded-full"
               >
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link
+              {/* <Link
                 href="https://twitter.com/rishugoyal"
                 target="_blank"
                 className="hover:text-primary transition-colors p-2 bg-gray-800 rounded-full"
               >
                 <Twitter className="h-5 w-5" />
-              </Link>
+              </Link> */}
               <Link
-                href="mailto:rishu.goyal@example.com"
+                href="mailto:rishugoyal16800@gmail.com"
                 className="hover:text-primary transition-colors p-2 bg-gray-800 rounded-full"
               >
                 <Mail className="h-5 w-5" />
@@ -85,18 +85,18 @@ export default function Footer() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <ul className="space-y-2">
-                <li className="text-gray-400">Bangalore, India</li>
+                <li className="text-gray-400">Noida, Uttar Pradesh, India</li>
                 <li>
                   <Link
-                    href="mailto:rishu.goyal@example.com"
+                    href="mailto:rishugoyal@gmail.com"
                     className="text-gray-400 hover:text-primary transition-colors"
                   >
-                    rishu.goyal@example.com
+                    rishugoyal@gmail.com
                   </Link>
                 </li>
                 <li>
-                  <Link href="tel:+919876543210" className="text-gray-400 hover:text-primary transition-colors">
-                    +91 9876543210
+                  <Link href="tel:+918059870163" className="text-gray-400 hover:text-primary transition-colors">
+                    +91 8059870163
                   </Link>
                 </li>
               </ul>
@@ -104,14 +104,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        {/* <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
             &copy; {currentYear} Rishu Goyal. All rights reserved.
           </div>
           <div className="text-gray-400 text-sm flex items-center">
             Made with <Heart className="h-4 w-4 text-red-500 mx-1" /> using Next.js and Tailwind CSS
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   )
