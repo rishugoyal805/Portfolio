@@ -20,6 +20,16 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+    // Added allowedDevOrigins
+    allowedDevOrigins: [
+      "http://localhost:3000",            // Localhost
+      "https://positive-liberal-treefrog.ngrok-free.app"  // Ngrok origin
+    ],
+  },
+  env: {
+    NEXT_PUBLIC_EMAILJS_SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+    NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
   },
 }
 
@@ -40,9 +50,8 @@ function mergeConfig(nextConfig, userConfig) {
         ...userConfig[key],
       }
     } else {
-      nextConfig[key] = userConfig[key]
-    }
+      nextConfig[key] = u    }
   }
 }
 
-export default nextConfig
+export default nextConfi
