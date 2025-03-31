@@ -50,8 +50,8 @@ function mergeConfig(nextConfig, userConfig) {
         ...userConfig[key],
       }
     } else {
-      nextConfig[key] = u    }
+      nextConfig[key] = userConfig[key]    }
   }
 }
 
-export default nextConfi
+export default nextConfig
