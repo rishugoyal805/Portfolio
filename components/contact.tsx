@@ -1,13 +1,18 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Resend } from "resend"
+import emailjs from "@emailjs/browser";
+
+const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,34 +21,37 @@ export default function Contact() {
     subject: "",
     message: "",
   })
+
+
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
-
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
+    e.preventDefault();
+    setIsSubmitting(true);  // Prevent multiple submissions
+  
     try {
-      // Here you would typically send the form data to your backend or a service like Formspree
-      await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate network request
-      console.log("Form submitted:", formData)
-
-      // Reset form
-      setFormData({ name: "", email: "", subject: "", message: "" })
-      alert("Thank you for your message! I'll get back to you soon.")
+      const response = await emailjs.send(
+        serviceID!,
+        templateID!,
+        { name: formData.name, email: formData.email, subject: formData.subject, message: formData.message },
+        publicKey!
+      );
+  
+      console.log("Email sent successfully", response);
+      alert("Message Sent Successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "" });  // Reset form
     } catch (error) {
-      console.error("Error submitting form:", error)
-      alert("There was an error sending your message. Please try again.")
+      console.error("Error sending email", error);
+      alert("Failed to send message.");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
-
+  };
+  
   const contactInfo = [
     {
       icon: Mail,
@@ -108,29 +116,19 @@ export default function Contact() {
               <CardContent className="p-4 sm:p-6">
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {/* Name Input */}
                     <div className="relative">
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder=""
+                        placeholder=" "
                         required
                         disabled={isSubmitting}
-                        className="peer h-12 w-full border rounded-md px-3 pt-5 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
-                      <label
-                        htmlFor="name"
-                        className="absolute left-3 top-4 text-gray-500 text-sm transition-all 
-      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base 
-      peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-500"
-                      >
-                        Enter your full name
-                      </label>
+                      <label htmlFor="name">Enter your full name</label>
                     </div>
 
-                    {/* Email Input */}
                     <div className="relative">
                       <Input
                         id="email"
@@ -138,19 +136,11 @@ export default function Contact() {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder=""
+                        placeholder=" "
                         required
                         disabled={isSubmitting}
-                        className="peer h-12 w-full border rounded-md px-3 pt-5 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
-                      <label
-                        htmlFor="email"
-                        className="absolute left-3 top-4 text-gray-500 text-sm transition-all 
-      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base 
-      peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-500"
-                      >
-                        Enter your email address
-                      </label>
+                      <label htmlFor="email">Enter your email address</label>
                     </div>
                   </div>
 
@@ -163,14 +153,8 @@ export default function Contact() {
                       placeholder=" "
                       required
                       disabled={isSubmitting}
-                      className="peer h-10 w-full border rounded-md px-2 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    <label
-                      htmlFor="subject"
-                      className="absolute left-2 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500"
-                    >
-                      What's your message about?
-                    </label>
+                    <label htmlFor="subject">What's your message about?</label>
                   </div>
 
                   <div className="relative">
@@ -183,14 +167,8 @@ export default function Contact() {
                       rows={5}
                       required
                       disabled={isSubmitting}
-                      className="peer w-full border rounded-md px-2 py-1 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    <label
-                      htmlFor="message"
-                      className="absolute left-2 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500"
-                    >
-                      Type your message here...
-                    </label>
+                    <label htmlFor="message">Type your message here...</label>
                   </div>
 
                   <Button type="submit" className="w-full" disabled={isSubmitting}>
@@ -233,4 +211,3 @@ export default function Contact() {
     </section>
   )
 }
-
