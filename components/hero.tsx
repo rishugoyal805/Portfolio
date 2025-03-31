@@ -9,7 +9,8 @@ export default function Hero() {
   const [text, setText] = useState("")
   const [isTyping, setIsTyping] = useState(true)
   const [isVisible, setIsVisible] = useState(false)
-  const fullText = "🚀 Full Stack Developer | AI & Web Enthusias"
+  const fullText = "🚀 Full Stack Developer"
+  // const fullText = "🚀 Full Stack Developer | AI & Web Enthusias"
 
   useEffect(() => {
     setIsVisible(true)
