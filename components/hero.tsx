@@ -9,7 +9,7 @@ export default function Hero() {
   const [text, setText] = useState("")
   const [isTyping, setIsTyping] = useState(true)
   const [isVisible, setIsVisible] = useState(false)
-  const fullText = "Full Stack Developer"
+  const fullText = "🚀 Full Stack Developer | AI & Web Enthusias"
 
   useEffect(() => {
     setIsVisible(true)
@@ -62,8 +62,7 @@ export default function Hero() {
               <span className="animate-blink">|</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto md:mx-0">
-              I build exceptional and accessible digital experiences for the web. Passionate about creating solutions
-              that are both functional and beautiful.
+            I craft scalable, efficient, and user-friendly digital experiences. Passionate about blending functionality with aesthetics to build impactful solutions.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <Button asChild size="lg" className="rounded-full shadow-md hover:shadow-lg transition-all">
